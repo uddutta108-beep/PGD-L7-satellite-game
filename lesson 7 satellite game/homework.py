@@ -53,4 +53,31 @@ def draw():
 def update():
     pass
 
+def on_mouse_down(pos):
+    global next_star
+    global lines
+    if next_star < number_of_star:
+        if stars[next_star].collidepoint(pos):
+            if next_star:
+                lines.append((stars[next_star-1].pos,stars[next_star].pos))
+            next_star = next_star + 1
+        else:
+            lines = []
+            next_star = 0
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 pgzrun.go()
